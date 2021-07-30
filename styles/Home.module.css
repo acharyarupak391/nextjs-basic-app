@@ -119,3 +119,96 @@
     flex-direction: column;
   }
 }
+
+/* Header styles */
+
+.headerDiv {
+  /* position: fixed;
+  width: 100%; */
+
+  position: sticky;
+  top: 0;
+}
+
+.headerDiv > ul {
+  /* border: 1px solid blue; */
+  background-color: lightblue;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  list-style: none;
+}
+
+.headerDiv > ul > li {
+  /* margin-right: 40px; */
+  padding: 15px 25px;
+  color: black;
+  cursor: pointer;
+}
+
+.headerDiv>ul>li:hover {
+  background-color: rgb(155, 141, 245);
+  color: rgb(56, 54, 50);
+
+}
+
+/* About page styles */
+
+.posts_container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.about_card {
+  margin: 15px;
+  width: 60%;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px 0 #bdc9d7;
+  padding: 1.5rem;
+  cursor: pointer;
+  flex-basis: 25%;
+  border: 1px solid transparent;
+}
+
+.about_card:hover {
+  color: #0070f3;
+  border-color: #0070f3;
+  box-shadow: 0 8px 16px 0 #bdc9d7;
+}
+
+.card_title {
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.card_body {
+  font-weight: 400;
+}
+
+
+.post_card {
+  margin: 15px auto;
+  width: 40%;
+  min-width: 300px;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px 0 #bdc9d7;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: box-shadow 750 linear;
+}
+
+.post_card:hover {
+  color: #0070f3;
+  border-color: #0070f3;
+  box-shadow: 0 8px 16px 0 #bdc9d7;
+}
+
+.id_div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.id {
+  font-family: 'Courier New', Courier, monospace;
+}
