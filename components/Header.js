@@ -10,14 +10,19 @@ const Header = (props) => {
       name: "Home",
     },
     {
-      link: "/about",
-      name: "About",
+      link: "/articles",
+      name: "Articles",
     },
     {
       link: "/contact",
       name: "Contact Us",
     },
   ];
+
+  const activeStyle = {
+    backgroundColor: "darkslateblue",
+    color: "rgb(241, 241, 241)",
+  };
   return (
     <div className={styles.headerDiv}>
       <ul>
@@ -25,11 +30,10 @@ const Header = (props) => {
           <Link key={nav.link} href={nav.link}>
             <li
               style={
-                nav.link === router.asPath
-                  ? {
-                      backgroundColor: "darkslateblue",
-                      color: "rgb(241, 241, 241)",
-                    }
+                nav.link === router.asPath ||
+                (nav.link === "/articles" &&
+                  router.pathname === "/article/[id]")
+                  ? activeStyle
                   : {}
               }
             >

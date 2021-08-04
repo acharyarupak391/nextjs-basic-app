@@ -12,14 +12,13 @@ const About = (props) => {
     {
       props.posts.map(post => (
         <Link key={post.id} href={{
-          pathname: "/post/[id]",
+          pathname: "/article/[id]",
           query: {
             id: post.id
           }
         }} >
           <div className={styles.about_card}>
-            <h3 className={styles.card_title}>{post.title}</h3>
-            {/* <h5 className={styles.card_body}>{post.body}</h5> */}
+            <h4 className={styles.card_title1}>{post.title}</h4>
           </div>
         </Link>
       ))
@@ -34,11 +33,12 @@ export default About;
 export const getStaticProps = async() => {
   let response;
   try{
-    response = await fetch("https://jsonplaceholder.typicode.com/posts?_limit=20");
-    let posts = await response.json()
+    // response = await fetch("https://jsonplaceholder.typicode.com/posts");
+    response = await fetch("http://localhost:3000/api/articles");
+    let data = await response.json()
     return {
       props: {
-        posts
+        posts: data.posts
       }
     }
   } catch(err) {
